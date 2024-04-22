@@ -12,11 +12,15 @@ import Channel from "./page/Channel";
 import Video from "./page/Video";
 import Search from "./page/Search";
 import Not from "./page/Not";
+import Header from "./section/Header";
+import Main from "./section/Main";
+import Footer from "./section/Footer";
 
 const App = () => {
   return (
-    <div>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Header />
+      <Main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/today" element={<Today />} />
@@ -31,8 +35,9 @@ const App = () => {
           <Route path="/search/:searchID" element={<Search />} />
           <Route path="/*" element={<Not />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </Main>
+      <Footer />
+    </BrowserRouter>
   );
 };
 
